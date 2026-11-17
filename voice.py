@@ -25,13 +25,21 @@ class OpmVoice:
                     "rr": vals[3], "sl": vals[4], "tl": vals[5],
                     "ks": vals[6], "mul": vals[7], "dt1": vals[8],
                     "dt2": vals[9] if len(vals) > 9 else 0,
+                    # 第 11 个是 AMS-EN（寄存器 0x60 的 bit7），LFO 振幅调制的开关。
+                    # 大部分音色是 0，但旧作东方有几条是 1，丢了会少一层颤音。
+                    "am": vals[10] if len(vals) > 10 else 0,
                 })
         return v
 
 
 def load_opm_text(path: str) -> list[OpmVoice]:
     voices, cur_name, cur_lines = [], None, []
-    for raw in open(path, encoding="ascii", errors="ignore"):
+    # 音色库可能是 ASCII（老库）也可能是 UTF-8（带中文/日文音色名）
+    try:
+        fh = open(path, encoding="utf-8")
+    except UnicodeDecodeError:
+        fh = open(path, encoding="ascii", errors="ignore")
+    for raw in fh:
         line = raw.rstrip("\r\n")
         if line.startswith("@:"):
             if cur_name is not None:
