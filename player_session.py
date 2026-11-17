@@ -22,7 +22,7 @@ from rt_engine import Engine, Renderer, Resampler
 from smf import parse_smf
 from voice import load_opm_text
 
-DRUM_MODES = ("fm", "ssg", "ssg-clean", "pcm", "ssg+pcm", "ssg-clean+pcm")
+DRUM_MODES = ("fm", "ssg", "ssg-clean", "pcm", "ssg+pcm", "ssg-clean+pcm", "oki")
 
 
 def app_dir() -> str:
@@ -63,6 +63,10 @@ class Config:
     tail: float = 1.0
     lang: str = "zh"          # zh | en，界面语言
     loop: bool = False        # 播完自动从头循环
+    oki_chip: str = "6295"    # 6258（X68000，单通道）| 6295（街机，四通道）
+    oki_clock: int = 1_056_000  # 6258 建议 4_000_000 → 15 625 Hz
+    oki_velocity: bool = False  # 硬件无力度，默认关
+    oki_gain: float = 0.5       # 芯片输出近满幅，和 PCM 一样压一半防止削波
 
     # ---------- 持久化 ----------
     @staticmethod
@@ -116,6 +120,8 @@ class Session:
         self.system = None
         self.ssg = None
         self.pcm = None
+        self.oki = None
+        self.oki_notes = 0
         self.renderer = None
         self.engine = None
         self.total_sec = 0.0
@@ -161,13 +167,35 @@ class Session:
             self.system.ssg_recipe = "clean" if "clean" in drums else "legacy"
         if use_pcm:
             self._attach_pcm()
+        if "oki" in drums:
+            self._attach_oki()
 
         self.renderer = Renderer(self.core, self.system, events, total_sec,
                                  tail=cfg.tail, ssg=self.ssg, ssg_gain=cfg.ssg_gain,
                                  pcm=self.pcm, pcm_gain=cfg.pcm_gain,
+                                 oki=self.oki, oki_gain=cfg.oki_gain,
                                  master=cfg.volume)
         self.engine = Engine(self.renderer, sr_out=48_000, blocksize=cfg.blocksize,
                              target_blocks=6)
+
+    def _attach_oki(self) -> None:
+        """挂 OKI ADPCM 鼓（MSM6258 / MSM6295）。缺采样则静默放弃。"""
+        try:
+            from oki_core import OkiChip
+            from oki_source import OkiSource, load_oki_dir
+        except ImportError:
+            return
+        d = self.cfg.drum_dir
+        if not d or not os.path.isdir(d):
+            return
+        chip = OkiChip(self.cfg.oki_chip, self.cfg.oki_clock,
+                       velocity=self.cfg.oki_velocity)
+        n = load_oki_dir(chip, d)
+        if n == 0:
+            return
+        self.oki = OkiSource(chip, self.core.sample_rate())
+        self.oki_notes = len(chip.samples)
+        self.system.oki = self.oki
 
     def _attach_pcm(self) -> None:
         """挂 PCM 鼓；目录不存在或没有采样就静默放弃（退回 FM/SSG 鼓）。"""

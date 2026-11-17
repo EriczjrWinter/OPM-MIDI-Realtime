@@ -590,6 +590,9 @@ class OpmSystem:
 
         # PCM 采样鼓（由 rtplayer 按 --pcm 注入）
         self.pcm = None
+
+        # OKI ADPCM 鼓（6258/6295），由 Session/CLI 注入
+        self.oki = None
         
         self.serial = 0
         self.time = 0.0
@@ -861,6 +864,11 @@ class OpmSystem:
         # SSG 接管核心节奏：底鼓/军鼓/踩镲，完全不占用 OPM 通道
         if self.ssg_drums and note in SSG_DRUM_NOTES:
             self._play_ssg_drum(note, velocity)
+            return
+
+        # OKI ADPCM 鼓（6258/6295）：接管所有有采样的音符，不占用 OPM 通道
+        if self.oki is not None and note in self.oki.samples:
+            self.oki.trigger(note, velocity)
             return
 
         # PCM 采样鼓：有对应采样就用，同样不占用 OPM 通道

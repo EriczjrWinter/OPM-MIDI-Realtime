@@ -46,12 +46,17 @@ STRINGS = {
         "drum_pcm": "PCM 采样鼓（需指定目录）",
         "drum_ssg_pcm": "SSG + PCM 混合（SSG 主鼓 / PCM 其余）",
         "drum_ssg_clean_pcm": "SSG(修正) + PCM 混合",
+        "drum_oki": "OKI ADPCM 鼓（6258 / 6295）",
+        "oki": "OKI 芯片",
+        "oki_hint": "6258: 4000000 · 6295: 1056000",
         "export": "导出 WAV…",
         "export_t": "导出 WAV",
         "export_done": "已导出：\n{path}\n\n{sr} Hz / {sec:.1f}s / peak {peak}/32767",
         "export_cancel": "导出已取消",
         "export_busy": "正在导出 {pct}%…",
         "loop": "循环播放",
+        "translate": "翻译层",
+        "translate_hint": "（X68K 模式建议关闭）",
         "no_bank": "（没有找到 .opm）",
         "env_missing_pcm": "PCM 采样目录缺失 → 会自动退回 SSG/FM 鼓",
         "err_no_midi": "先选一个 MIDI 文件。",
@@ -87,12 +92,17 @@ STRINGS = {
         "drum_pcm": "PCM samples (needs a folder)",
         "drum_ssg_pcm": "SSG + PCM hybrid (SSG keeps kick/snare/hat)",
         "drum_ssg_clean_pcm": "SSG (corrected) + PCM hybrid",
+        "drum_oki": "OKI drums (ADPCM 6258/6295)",
+        "oki": "OKI chip",
+        "oki_hint": "6258: 4000000 · 6295: 1056000",
         "export": "Export WAV…",
         "export_t": "Export WAV",
         "export_done": "Exported:\n{path}\n\n{sr} Hz / {sec:.1f}s / peak {peak}/32767",
         "export_cancel": "Export cancelled",
         "export_busy": "Exporting {pct}%…",
         "loop": "Loop playback",
+        "translate": "Translation layer",
+        "translate_hint": "(turn off for X68K)",
         "no_bank": "(no .opm found)",
         "env_missing_pcm": "PCM sample folder missing → falls back to SSG/FM drums",
         "err_no_midi": "Pick a MIDI file first.",
@@ -113,7 +123,7 @@ STRINGS = {
 
 DRUM_KEYS = {"fm": "drum_fm", "ssg": "drum_ssg", "ssg-clean": "drum_ssg_clean",
              "pcm": "drum_pcm", "ssg+pcm": "drum_ssg_pcm",
-             "ssg-clean+pcm": "drum_ssg_clean_pcm"}
+             "ssg-clean+pcm": "drum_ssg_clean_pcm", "oki": "drum_oki"}
 
 
 class App:
@@ -198,24 +208,40 @@ class App:
         ttk.Entry(frm, textvariable=self.v_dir).grid(row=4, column=1, sticky="ew", **pad)
         ttk.Button(frm, text=self.t("browse"), command=self.pick_dir).grid(row=4, column=2, **pad)
 
+        # OKI 芯片 / 时钟
+        row(5, self.t("oki"))
+        oki_bar = ttk.Frame(frm)
+        oki_bar.grid(row=5, column=1, columnspan=2, sticky="w", **pad)
+        self.v_oki_chip = tk.StringVar(value=self.cfg.oki_chip)
+        cb_oki = ttk.Combobox(oki_bar, textvariable=self.v_oki_chip, state="readonly",
+                              values=["6295", "6258"], width=6)
+        cb_oki.pack(side="left")
+        cb_oki.bind("<<ComboboxSelected>>", lambda _e: self.on_oki())
+        ttk.Label(oki_bar, text="clock").pack(side="left", padx=(10, 4))
+        self.v_oki_clock = tk.StringVar(value=str(self.cfg.oki_clock))
+        e_clock = ttk.Entry(oki_bar, textvariable=self.v_oki_clock, width=10)
+        e_clock.pack(side="left")
+        e_clock.bind("<FocusOut>", lambda _e: self.on_oki())
+        ttk.Label(oki_bar, text=self.t("oki_hint")).pack(side="left", padx=(10, 0))
+
         # 音量
-        row(5, self.t("volume"))
+        row(6, self.t("volume"))
         self.v_vol = tk.DoubleVar(value=self.cfg.volume)
         ttk.Scale(frm, from_=0.0, to=1.5, variable=self.v_vol,
-                  command=self.on_volume).grid(row=5, column=1, sticky="ew", **pad)
-        ttk.Label(frm, text=self.t("volume_hint")).grid(row=5, column=2, sticky="w", **pad)
+                  command=self.on_volume).grid(row=6, column=1, sticky="ew", **pad)
+        ttk.Label(frm, text=self.t("volume_hint")).grid(row=6, column=2, sticky="w", **pad)
 
         # 语言
-        row(6, self.t("lang"))
+        row(7, self.t("lang"))
         self.v_lang = tk.StringVar(value="中文" if self.lang == "zh" else "English")
         lcb = ttk.Combobox(frm, textvariable=self.v_lang, state="readonly",
                            values=["中文", "English"], width=10)
-        lcb.grid(row=6, column=1, sticky="w", **pad)
+        lcb.grid(row=7, column=1, sticky="w", **pad)
         lcb.bind("<<ComboboxSelected>>", lambda _e: self.on_lang())
 
         # 控制
         ctl = ttk.Frame(frm)
-        ctl.grid(row=7, column=0, columnspan=3, sticky="ew", pady=(10, 2))
+        ctl.grid(row=8, column=0, columnspan=3, sticky="ew", pady=(10, 2))
         self.btn_play = ttk.Button(ctl, text=self.t("play"), command=self.on_play)
         self.btn_play.pack(side="left", padx=4)
         self.btn_stop = ttk.Button(ctl, text=self.t("stop"), command=self.on_stop, state="disabled")
@@ -223,18 +249,23 @@ class App:
         self.btn_export = ttk.Button(ctl, text=self.t("export"), command=self.on_export)
         self.btn_export.pack(side="left", padx=4)
 
-        # 循环
+        # 循环 / 翻译层
+        loop_bar = ttk.Frame(frm)
+        loop_bar.grid(row=9, column=0, columnspan=3, sticky="w", **pad)
         self.v_loop = tk.BooleanVar(value=self.cfg.loop)
-        ttk.Checkbutton(frm, text=self.t("loop"), variable=self.v_loop,
-                        command=self.on_loop).grid(row=8, column=0, columnspan=3,
-                                                   sticky="w", **pad)
+        ttk.Checkbutton(loop_bar, text=self.t("loop"), variable=self.v_loop,
+                        command=self.on_loop).pack(side="left")
+        self.v_trans = tk.BooleanVar(value=not self.cfg.raw)
+        ttk.Checkbutton(loop_bar, text=self.t("translate"), variable=self.v_trans,
+                        command=self.on_translate).pack(side="left", padx=24)
+        ttk.Label(loop_bar, text=self.t("translate_hint")).pack(side="left")
 
         # 进度
         self.v_prog = tk.DoubleVar(value=0.0)
         ttk.Progressbar(frm, variable=self.v_prog, maximum=100).grid(
-            row=9, column=0, columnspan=3, sticky="ew", **pad)
+            row=10, column=0, columnspan=3, sticky="ew", **pad)
         self.v_time = tk.StringVar(value="0.0 / 0.0 s")
-        ttk.Label(frm, textvariable=self.v_time).grid(row=10, column=0, columnspan=2, sticky="w", **pad)
+        ttk.Label(frm, textvariable=self.v_time).grid(row=11, column=0, columnspan=2, sticky="w", **pad)
 
         # 状态栏
         self.v_status = tk.StringVar(value=self._env_status())
@@ -281,6 +312,14 @@ class App:
         if self.cfg.drums == "pcm" and not os.path.isdir(self.v_dir.get() or ""):
             messagebox.showwarning(self.t("warn_pcm_t"), self.t("warn_pcm"))
 
+    def on_oki(self):
+        self.cfg.oki_chip = self.v_oki_chip.get() or "6295"
+        try:
+            self.cfg.oki_clock = max(100_000, int(float(self.v_oki_clock.get())))
+        except (TypeError, ValueError):
+            self.v_oki_clock.set(str(self.cfg.oki_clock))
+        self.cfg.save()
+
     def on_volume(self, _v=None):
         self.cfg.volume = float(self.v_vol.get())
         if self.session and self.session.renderer:
@@ -302,6 +341,12 @@ class App:
         c.drum_dir = self.v_dir.get().strip()
         c.volume = float(self.v_vol.get())
         c.lang = self.lang
+        c.raw = not bool(self.v_trans.get())
+        c.oki_chip = self.v_oki_chip.get() or "6295"
+        try:
+            c.oki_clock = max(100_000, int(float(self.v_oki_clock.get())))
+        except (TypeError, ValueError):
+            c.oki_clock = self.cfg.oki_clock
         return c
 
     def on_play(self):
@@ -384,6 +429,10 @@ class App:
     # ---------------- 循环 ----------------
     def on_loop(self):
         self.cfg.loop = bool(self.v_loop.get())
+        self.cfg.save()
+
+    def on_translate(self):
+        self.cfg.raw = not bool(self.v_trans.get())
         self.cfg.save()
 
     def _poll_export(self):
@@ -478,6 +527,13 @@ def selfcheck() -> int:
         p.close()
     except Exception as e:
         log(f"PCM: {e}")
+
+    try:
+        import oki_core
+        c = oki_core.OkiChip("6295", oki_core.ARCADE_CLOCK)
+        log(f"OKI core: OK rate={c.rate} Hz ch={c.n_channels}")
+    except Exception as e:
+        log(f"OKI core: 不可用（{type(e).__name__}）— OKI 鼓将不可选")
 
     try:
         import sounddevice as sd

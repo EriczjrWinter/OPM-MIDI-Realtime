@@ -34,6 +34,9 @@ $piArgs = @(
     "--add-binary", "ssg.dll;.",
     # PortAudio 的 DLL 在 sounddevice 包里，不 collect 会漏
     "--collect-data", "sounddevice",
+    # OKI 核心是在函数里 import 的，显式列出来确保被收集
+    "--hidden-import", "oki_core",
+    "--hidden-import", "oki_source",
     # 附带音色库（v7 默认，v4 备选）
     "--add-data", "FB01_GM_v7.opm;.",
     "--add-data", "FB01_GM_v4.opm;.",

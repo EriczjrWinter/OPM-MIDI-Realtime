@@ -28,7 +28,7 @@ class Renderer:
 
     def __init__(self, core, system, events, total_sec, tail=1.0, quantize=False,
                  ssg=None, ssg_gain=2.0, ssg_dc_block=True, pcm=None, pcm_gain=1.0,
-                 master=1.0):
+                 oki=None, oki_gain=1.0, master=1.0):
         self.core = core
         self.system = system
         self.ssg = ssg                      # 可选：额外的 SSG(YM2149) 声源，单声道
@@ -36,6 +36,8 @@ class Renderer:
         self.ssg_dc_block = ssg_dc_block    # 模拟 YM2149 输出耦合电容（隔直）
         self.pcm = pcm                      # 可选：PCM 采样鼓，单声道
         self.pcm_gain = pcm_gain
+        self.oki = oki                      # 可选：OKI ADPCM 鼓（已在 55930 速率上）
+        self.oki_gain = oki_gain
         self.master = master                # 总音量（0..2），1.0 时走原路径保持逐字节一致
         self._dc_a = 0.999                  # 拐点 ≈ 8.9 Hz @55930
         self._dc_x1 = 0.0
@@ -93,7 +95,7 @@ class Renderer:
     def _chunk(self, n):
         self.core.generate_into(n, self._buf)
         opm = np.frombuffer(self._buf, dtype="<i2", count=2 * n)
-        if self.ssg is None and self.pcm is None and self.master == 1.0:
+        if self.ssg is None and self.pcm is None and self.oki is None and self.master == 1.0:
             return opm.reshape(n, 2) >> 1          # 与 player.py 相同的 -6 dB 余量
 
         # 混音：OPM 立体声 ×0.5，SSG / PCM 单声道居中叠加
@@ -105,6 +107,8 @@ class Renderer:
             mix += (ssg_f * self.ssg_gain)[:, None]
         if self.pcm is not None:
             mix += (self.pcm.generate(n).astype(np.float32) * self.pcm_gain)[:, None]
+        if self.oki is not None:
+            mix += (self.oki.generate(n).astype(np.float32) * self.oki_gain)[:, None]
         if self.master != 1.0:
             mix *= np.float32(self.master)
         np.clip(mix, -32768.0, 32767.0, out=mix)
