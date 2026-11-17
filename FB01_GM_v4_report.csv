@@ -1,0 +1,129 @@
+GM#,Family,Lineage,Source,Patch,Score,How
+0,piano,FB01(OPP),FB01ROM1_1.opm,piano,100,名字命中
+1,piano,TX81Z(OPZ),tx81z_28n_1.opm,piano,90,名字命中
+2,piano,FB01(OPP),FB01ROM2_1.opm,uppiano,70,名字命中
+3,piano,FB01(OPP),FB01ROM2_2.opm,lpiano1,70,名字命中
+4,piano,FB01(OPP),DBH-ELP_1.opm,db2 ep1,70,名字命中
+5,piano,FB01(OPP),DEE-EHO_1.opm,deepma1,70,名字命中
+6,piano,FB01(OPP),FB01ROM1_4.opm,clav,100,名字命中
+7,piano,FB01(OPP),BEL-CLA_6.opm,clav. 1,70,名字命中
+8,chroma,FB01(OPP),FB01ROM1_3.opm,glocken,100,家族推测
+9,chroma,TX81Z(OPZ),tx81z_01a_4.opm,glocken,90,名字命中
+10,chroma,FB01(OPP),FB01ROM1_6.opm,marimba,100,家族推测
+11,chroma,TX81Z(OPZ),tx81z_38n_2.opm,vibe,90,名字命中
+12,chroma,TX81Z(OPZ),tx81z_01g_3.opm,marimba,90,名字命中
+13,chroma,FB01(OPP),AAA-ACC_2.opm,.xylo 1,70,名字命中
+14,chroma,TX81Z(OPZ),tx81z_07n_3.opm,bell,90,名字命中
+15,chroma,TX81Z(OPZ),tx81z_12m_3.opm,glocken,90,家族推测
+16,organ,FB01(OPP),FB01ROM5_2.opm,organ,100,名字命中
+17,organ,TX81Z(OPZ),tx81z_25n_3.opm,organ,90,名字命中
+18,organ,FB01(OPP),FB01ROM1_2.opm,eorgan1,70,名字命中
+19,organ,FB01(OPP),CLE-DBG_3.opm,church1,70,名字命中
+20,organ,FB01(OPP),FB01ROM5_1.opm,jorgan1,70,名字命中
+21,organ,FB01(OPP),AAA-ACC_6.opm,acc pn1,70,名字命中
+22,organ,FB01(OPP),FB01ROM3_6.opm,harmon2,70,名字命中
+23,organ,TX81Z(OPZ),tx81z_12n_2.opm,drawbar,90,家族推测
+24,guitar,TX81Z(OPZ),tx81z_12m_4.opm,guitar,90,名字命中
+25,guitar,TX81Z(OPZ),tx81z_18n_2.opm,guitar,90,名字命中
+26,guitar,FB01(OPP),FLU-HEA_2.opm,guitar1,70,名字命中
+27,guitar,FB01(OPP),CLA-DBL_3.opm,cleanp1,70,名字命中
+28,guitar,FB01(OPP),FB01ROM2_5.opm,muteclv,70,名字命中
+29,guitar,FB01(OPP),FLU-HEA_4.opm,guitar1,70,名字命中
+30,guitar,FB01(OPP),GON-HAR_3.opm,guitar1,70,名字命中
+31,guitar,FB01(OPP),GON-HAR_4.opm,guitar1,70,名字命中
+32,bass,FB01(OPP),BAC-BEA_3.opm,bass  1,70,名字命中
+33,bass,FB01(OPP),BAC-BEA_4.opm,bass.p1,70,名字命中
+34,bass,FB01(OPP),BAS-BEL_1.opm,bass c1,70,名字命中
+35,bass,FB01(OPP),BAS-BEL_2.opm,bass-s1,70,名字命中
+36,bass,FB01(OPP),RUF-SLA_6.opm,slap b1,70,名字命中
+37,bass,FB01(OPP),SFH-SLA_1.opm,slapba1,70,名字命中
+38,bass,FB01(OPP),BAS-BEL_4.opm,bass 11,70,名字命中
+39,bass,FB01(OPP),BAS-BEL_5.opm,bass 61,70,名字命中
+40,strings,TX81Z(OPZ),tx81z_01m_1.opm,violin,90,名字命中
+41,strings,FB01(OPP),UNT-WHO_3.opm,viola 1,70,名字命中
+42,strings,TX81Z(OPZ),tx81z_09n_4.opm,cello,90,名字命中
+43,strings,FB01(OPP),BAC-BEA_5.opm,basstr1,70,名字命中
+44,strings,TX81Z(OPZ),tx81z_24m_3.opm,strings,90,家族推测
+45,strings,FB01(OPP),FB01ROM3_4.opm,pizzic1,70,名字命中
+46,strings,TX81Z(OPZ),tx81z_13m_3.opm,harp,90,名字命中
+47,strings,TX81Z(OPZ),tx81z_26m_3.opm,timpani,90,名字命中
+48,ensemble,TX81Z(OPZ),tx81z_33n_3.opm,strings,90,名字命中
+49,ensemble,TX81Z(OPZ),tx81z_33n_4.opm,strings,90,名字命中
+50,ensemble,FB01(OPP),ACC-ANL_6.opm,anavox1,70,家族推测
+51,ensemble,FB01(OPP),CAT-CLA_5.opm,choir 1,70,家族推测
+52,ensemble,TX81Z(OPZ),tx81z_07m_3.opm,choir..,60,名字命中
+53,ensemble,FB01(OPP),FB01ROM1_5.opm,voices,70,名字命中
+54,ensemble,TX81Z(OPZ),tx81z_35n_4.opm,synvox,60,名字命中
+55,ensemble,FB01(OPP),FB01ROM5_4.opm,hitkoto,70,名字命中
+56,brass,TX81Z(OPZ),tx81z_26m_4.opm,trumpet,90,名字命中
+57,brass,TX81Z(OPZ),tx81z_08n_4.opm,brass,90,家族推测
+58,brass,TX81Z(OPZ),tx81z_37n_4.opm,tuba,90,名字命中
+59,brass,TX81Z(OPZ),tx81z_27m_1.opm,trumpet,90,名字命中
+60,brass,TX81Z(OPZ),tx81z_20n_2.opm,horn,90,名字命中
+61,brass,TX81Z(OPZ),tx81z_09n_1.opm,brass,90,名字命中
+62,brass,TX81Z(OPZ),tx81z_37n_3.opm,trumpet,90,家族推测
+63,brass,FB01(OPP),AAA-BAS_1.opm,brass1,70,家族推测
+64,reed,TX81Z(OPZ),tx81z_31n_1.opm,sax,90,名字命中
+65,reed,FB01(OPP),ACC-ANL_3.opm,alto1 1,70,名字命中
+66,reed,FB01(OPP),BAC-BEA_6.opm,bcsax 1,70,名字命中
+67,reed,FB01(OPP),RAN-SEA_6.opm,sax-1 1,70,名字命中
+68,reed,TX81Z(OPZ),tx81z_17m_4.opm,oboe,90,名字命中
+69,reed,TX81Z(OPZ),tx81z_25n_1.opm,oboe,90,家族推测
+70,reed,TX81Z(OPZ),tx81z_05m_4.opm,bassoon,90,名字命中
+71,reed,FB01(OPP),CAT-CLA_6.opm,clarin1,70,名字命中
+72,pipe,TX81Z(OPZ),tx81z_20m_3.opm,piccolo,90,名字命中
+73,pipe,TX81Z(OPZ),tx81z_11m_4.opm,flute,90,名字命中
+74,pipe,TX81Z(OPZ),tx81z_16n_2.opm,flute,90,家族推测
+75,pipe,FB01(OPP),FB01ROM3_5.opm,pan flt,70,名字命中
+76,pipe,TX81Z(OPZ),tx81z_08n_3.opm,bottlef,60,名字命中
+77,pipe,TX81Z(OPZ),tx81z_29m_1.opm,whistle,90,家族推测
+78,pipe,FB01(OPP),ELE-FLU_2.opm,flu.st1,70,家族推测
+79,pipe,FB01(OPP),ELE-FLU_3.opm,flute 1,70,家族推测
+80,lead,FB01(OPP),AAA-AAA_4.opm,..lead1,70,名字命中
+81,lead,FB01(OPP),INS-LEA_5.opm,lead b1,70,名字命中
+82,lead,FB01(OPP),AAA-AAA_6.opm,.syn-p1,70,家族推测
+83,lead,FB01(OPP),CAT-CLA_4.opm,chiffs1,70,名字命中
+84,lead,FB01(OPP),ACC-ANL_5.opm,anasyn1,70,家族推测
+85,lead,FB01(OPP),FB01ROM5_5.opm,m.voice,70,名字命中
+86,lead,FB01(OPP),EVE-FLU_4.opm,fifths1,70,名字命中
+87,lead,FB01(OPP),CLA-DBL_5.opm,crsyn 1,70,家族推测
+88,pad,FB01(OPP),ANL-BAC_3.opm,armpad1,70,名字命中
+89,pad,FB01(OPP),MOR-ORC_6.opm,ob-pad1,70,名字命中
+90,pad,FB01(OPP),PLU-ROT_1.opm,poly-p1,70,名字命中
+91,pad,FB01(OPP),AAA-ACC_1.opm,.synth1,70,家族推测
+92,pad,FB01(OPP),BAS-BEL_3.opm,bowed 1,70,名字命中
+93,pad,FB01(OPP),LOW-MGO_6.opm,metal-1,70,名字命中
+94,pad,FB01(OPP),AAA-BAS_2.opm,8vasyn1,70,家族推测
+95,pad,FB01(OPP),STO-SWI_6.opm,sweep.1,70,名字命中
+96,fx,FB01(OPP),BEL-CLA_2.opm,braina1,70,名字命中
+97,fx,FB01(OPP),ELP-ELE_6.opm,echo  1,70,家族推测
+98,fx,FB01(OPP),EPI-ETU_3.opm,echo  1,70,家族推测
+99,fx,FB01(OPP),FB01ROM5_6.opm,winds,70,家族推测
+100,fx,FB01(OPP),WBA-XYL_4.opm,wind  1,70,家族推测
+101,fx,TX81Z(OPZ),tx81z_06n_2.opm,bad fxb,60,家族推测
+102,fx,TX81Z(OPZ),tx81z_10m_3.opm,echo le,60,名字命中
+103,fx,TX81Z(OPZ),tx81z_29m_2.opm,windens,60,家族推测
+104,ethnic,TX81Z(OPZ),tx81z_22m_4.opm,sitar,90,名字命中
+105,ethnic,FB01(OPP),FB01ROM5_3.opm,banjo,100,名字命中
+106,ethnic,TX81Z(OPZ),tx81z_21n_4.opm,koto,90,家族推测
+107,ethnic,FB01(OPP),INS-LEA_4.opm,koto  1,70,名字命中
+108,ethnic,FB01(OPP),ELE-FLU_6.opm,fiddle1,70,家族推测
+109,ethnic,FB01(OPP),JLY-LOR_3.opm,koto m1,70,家族推测
+110,ethnic,FB01(OPP),RUF-SLA_5.opm,sitar 1,70,家族推测
+111,ethnic,TX81Z(OPZ),tx81z_01n_2.opm,shaker,60,家族推测
+112,perc,FB01(OPP),AAA-AAA_3.opm,-bells1,70,名字命中
+113,perc,TX81Z(OPZ),tx81z_03n_4.opm,agogo b,60,名字命中
+114,perc,TX81Z(OPZ),tx81z_36n_4.opm,tom,90,家族推测
+115,perc,TX81Z(OPZ),tx81z_37n_1.opm,tom,90,家族推测
+116,perc,FB01(OPP),CLA-DBL_1.opm,clav 11,70,家族推测
+117,perc,FB01(OPP),THB-TRO_4.opm,tom to1,70,名字命中
+118,perc,FB01(OPP),HAR-HOR_3.opm,hdrum 1,70,名字命中
+119,perc,FB01(OPP),CLE-DBG_1.opm,cymbal1,70,名字命中
+120,sfx,FB01(OPP),BEL-CLA_5.opm,bse.pi1,70,家族推测
+121,sfx,TX81Z(OPZ),tx81z_07m_1.opm,breatho,60,名字命中
+122,sfx,FB01(OPP),WBA-XYL_2.opm,wave2 1,70,名字命中
+123,sfx,FB01(OPP),BEA-BOU_5.opm,bird s1,70,名字命中
+124,sfx,FB01(OPP),BOW-CAS_4.opm,brasse1,70,家族推测
+125,sfx,FB01(OPP),HEA-INS_6.opm,insect1,70,家族推测
+126,sfx,FB01(OPP),INS-LEA_1.opm,insect1,70,家族推测
+127,sfx,FB01(OPP),JLY-LOR_4.opm,laser 1,70,家族推测

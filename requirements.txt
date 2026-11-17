@@ -1,0 +1,7 @@
+# 离线渲染（player.py）只需要标准库 + 现成的 opm.dll
+# 实时播放器额外需要：
+numpy>=1.24
+sounddevice>=0.4.6
+# 可选：MIDI 键盘实时输入
+# mido>=1.3
+# python-rtmidi>=1.5

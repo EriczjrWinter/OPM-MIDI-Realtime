@@ -1,0 +1,129 @@
+GM#,Family,Lineage,Source,Patch,Score,How
+0,piano,FB01(OPP),FB01ROM1_1.opm,piano,100,名字命中
+1,piano,TX81Z(OPZ),tx81z_28n_1.opm,piano,90,名字命中
+2,piano,FB01(OPP),FB01ROM2_1.opm,uppiano,70,名字命中
+3,piano,FB01(OPP),FB01ROM2_2.opm,lpiano1,70,名字命中
+4,piano,FB01(OPP),DBH-ELP_1.opm,db2 ep1,70,名字命中
+5,piano,FB01(OPP),DEE-EHO_1.opm,deepma1,70,名字命中
+6,piano,FB01(OPP),FB01ROM1_4.opm,clav,100,名字命中
+7,piano,FB01(OPP),BEL-CLA_6.opm,clav. 1,70,名字命中
+8,chroma,FB01(OPP),FB01ROM3_2.opm,percbr2,-4,包络匹配 d=0.05
+9,chroma,FB01(OPP),FB01ROM1_3.opm,glocken,100,名字命中
+10,chroma,TX81Z(OPZ),tx81z_08n_4.opm,brass,-4,包络匹配 d=0.05
+11,chroma,TX81Z(OPZ),tx81z_38n_2.opm,vibe,90,名字命中
+12,chroma,FB01(OPP),FB01ROM1_6.opm,marimba,100,名字命中
+13,chroma,FB01(OPP),AAA-ACC_2.opm,.xylo 1,70,名字命中
+14,chroma,TX81Z(OPZ),tx81z_07n_3.opm,bell,90,名字命中
+15,chroma,X68K(MDX),Origin_-_Ultima_4_-_ULT2.opm,mdx instrument @26,-4,包络匹配 d=0.05
+16,organ,FB01(OPP),FB01ROM5_2.opm,organ,100,名字命中
+17,organ,TX81Z(OPZ),tx81z_25n_3.opm,organ,90,名字命中
+18,organ,FB01(OPP),FB01ROM1_2.opm,eorgan1,70,名字命中
+19,organ,FB01(OPP),CLE-DBG_3.opm,church1,70,名字命中
+20,organ,FB01(OPP),FB01ROM5_1.opm,jorgan1,70,名字命中
+21,organ,FB01(OPP),AAA-ACC_6.opm,acc pn1,70,名字命中
+22,organ,FB01(OPP),FB01ROM3_6.opm,harmon2,70,名字命中
+23,organ,X68K(MDX),SEGA_-_Sonic_the_Hedgehog_-_PI_-_SONIC101.opm,mdx instrument @2,-2,包络匹配 d=0.03
+24,guitar,TX81Z(OPZ),tx81z_12m_4.opm,guitar,90,名字命中
+25,guitar,TX81Z(OPZ),tx81z_18n_2.opm,guitar,90,名字命中
+26,guitar,FB01(OPP),FLU-HEA_2.opm,guitar1,70,名字命中
+27,guitar,FB01(OPP),CLA-DBL_3.opm,cleanp1,70,名字命中
+28,guitar,FB01(OPP),FB01ROM2_5.opm,muteclv,70,名字命中
+29,guitar,FB01(OPP),FLU-HEA_4.opm,guitar1,70,名字命中
+30,guitar,FB01(OPP),GON-HAR_3.opm,guitar1,70,名字命中
+31,guitar,FB01(OPP),GON-HAR_4.opm,guitar1,70,名字命中
+32,bass,FB01(OPP),BAC-BEA_3.opm,bass  1,70,名字命中
+33,bass,FB01(OPP),BAC-BEA_4.opm,bass.p1,70,名字命中
+34,bass,FB01(OPP),BAS-BEL_1.opm,bass c1,70,名字命中
+35,bass,FB01(OPP),BAS-BEL_2.opm,bass-s1,70,名字命中
+36,bass,FB01(OPP),RUF-SLA_6.opm,slap b1,70,名字命中
+37,bass,FB01(OPP),SFH-SLA_1.opm,slapba1,70,名字命中
+38,bass,FB01(OPP),BAS-BEL_4.opm,bass 11,70,名字命中
+39,bass,FB01(OPP),BAS-BEL_5.opm,bass 61,70,名字命中
+40,strings,TX81Z(OPZ),tx81z_01m_1.opm,violin,90,名字命中
+41,strings,FB01(OPP),UNT-WHO_3.opm,viola 1,70,名字命中
+42,strings,TX81Z(OPZ),tx81z_09n_4.opm,cello,90,名字命中
+43,strings,FB01(OPP),BAC-BEA_5.opm,basstr1,70,名字命中
+44,strings,X68K(MDX),Konami_-_Rampage_-_TWINYS2S.opm,mdx instrument @74,0,包络匹配 d=0.01
+45,strings,FB01(OPP),FB01ROM3_4.opm,pizzic1,70,名字命中
+46,strings,TX81Z(OPZ),tx81z_13m_3.opm,harp,90,名字命中
+47,strings,TX81Z(OPZ),tx81z_26m_3.opm,timpani,90,名字命中
+48,ensemble,TX81Z(OPZ),tx81z_24m_3.opm,strings,90,名字命中
+49,ensemble,TX81Z(OPZ),tx81z_33n_3.opm,strings,90,名字命中
+50,ensemble,TX81Z(OPZ),tx81z_28m_3.opm,violins,-3,包络匹配 d=0.03
+51,ensemble,FB01(OPP),ANL-BAC_2.opm,anna f1,-3,包络匹配 d=0.04
+52,ensemble,FB01(OPP),CAT-CLA_5.opm,choir 1,70,名字命中
+53,ensemble,FB01(OPP),FB01ROM1_5.opm,voices,70,名字命中
+54,ensemble,FB01(OPP),ACC-ANL_6.opm,anavox1,70,名字命中
+55,ensemble,FB01(OPP),FB01ROM5_4.opm,hitkoto,70,名字命中
+56,brass,TX81Z(OPZ),tx81z_26m_4.opm,trumpet,90,名字命中
+57,brass,X68K(MDX),SEGA_-_Space_Harrier_-_CHAMA_-_SH07C.opm,mdx instrument @20,-3,包络匹配 d=0.03
+58,brass,TX81Z(OPZ),tx81z_37n_4.opm,tuba,90,名字命中
+59,brass,TX81Z(OPZ),tx81z_27m_1.opm,trumpet,90,名字命中
+60,brass,TX81Z(OPZ),tx81z_20n_2.opm,horn,90,名字命中
+61,brass,TX81Z(OPZ),tx81z_09n_1.opm,brass,90,名字命中
+62,brass,X68K(MDX),Atari_-_Gauntlet_-_GAUNT09.opm,mdx instrument @16,-4,包络匹配 d=0.04
+63,brass,X68K(MDX),Konami_-_Castlevania_-_CV_X68K_-_DRA14.opm,mdx instrument @180,-4,包络匹配 d=0.04
+64,reed,TX81Z(OPZ),tx81z_31n_1.opm,sax,90,名字命中
+65,reed,FB01(OPP),ACC-ANL_3.opm,alto1 1,70,名字命中
+66,reed,FB01(OPP),BAC-BEA_6.opm,bcsax 1,70,名字命中
+67,reed,FB01(OPP),RAN-SEA_6.opm,sax-1 1,70,名字命中
+68,reed,TX81Z(OPZ),tx81z_17m_4.opm,oboe,90,名字命中
+69,reed,FB01(OPP),UNT-WHO_2.opm,voices1,-4,包络匹配 d=0.04
+70,reed,TX81Z(OPZ),tx81z_05m_4.opm,bassoon,90,名字命中
+71,reed,FB01(OPP),CAT-CLA_6.opm,clarin1,70,名字命中
+72,pipe,TX81Z(OPZ),tx81z_20m_3.opm,piccolo,90,名字命中
+73,pipe,TX81Z(OPZ),tx81z_11m_4.opm,flute,90,名字命中
+74,pipe,X68K(MDX),Konami_-_Castlevania_-_CV_X68K_-_DRA10.opm,mdx instrument @107,-5,包络匹配 d=0.05
+75,pipe,FB01(OPP),FB01ROM3_5.opm,pan flt,70,名字命中
+76,pipe,TX81Z(OPZ),tx81z_08n_3.opm,bottlef,60,名字命中
+77,pipe,X68K(MDX),Konami_-_Castlevania_-_CV_X68K_-_DRA12.opm,mdx instrument @172,-5,包络匹配 d=0.05
+78,pipe,TX81Z(OPZ),tx81z_29m_1.opm,whistle,90,名字命中
+79,pipe,街机OST(OPM),01. LOAD BGM.opm,ch2,-5,包络匹配 d=0.05
+80,lead,FB01(OPP),AAA-AAA_4.opm,..lead1,70,名字命中
+81,lead,FB01(OPP),INS-LEA_5.opm,lead b1,70,名字命中
+82,lead,TX81Z(OPZ),tx81z_22m_3.opm,saxopho,-3,包络匹配 d=0.03
+83,lead,FB01(OPP),CAT-CLA_4.opm,chiffs1,70,名字命中
+84,lead,FB01(OPP),ELP-ELE_4.opm,elguit1,-3,包络匹配 d=0.04
+85,lead,FB01(OPP),FB01ROM5_5.opm,m.voice,70,名字命中
+86,lead,FB01(OPP),EVE-FLU_4.opm,fifths1,70,名字命中
+87,lead,TX81Z(OPZ),tx81z_05m_1.opm,atackbr,-3,包络匹配 d=0.04
+88,pad,FB01(OPP),ANL-BAC_3.opm,armpad1,70,名字命中
+89,pad,FB01(OPP),MOR-ORC_6.opm,ob-pad1,70,名字命中
+90,pad,FB01(OPP),PLU-ROT_1.opm,poly-p1,70,名字命中
+91,pad,FB01(OPP),CLA-DBL_4.opm,contra1,-1,包络匹配 d=0.02
+92,pad,FB01(OPP),BAS-BEL_3.opm,bowed 1,70,名字命中
+93,pad,FB01(OPP),LOW-MGO_6.opm,metal-1,70,名字命中
+94,pad,FB01(OPP),PLU-ROT_5.opm,refs w1,-2,包络匹配 d=0.02
+95,pad,FB01(OPP),STO-SWI_6.opm,sweep.1,70,名字命中
+96,fx,FB01(OPP),BEL-CLA_2.opm,braina1,70,名字命中
+97,fx,TX81Z(OPZ),tx81z_35n_1.opm,synperc,-4,包络匹配 d=0.04
+98,fx,X68K(MDX),SEGA_-_Altered_Beast_-_ZYU90.opm,mdx instrument @39,-5,包络匹配 d=0.05
+99,fx,FB01(OPP),CAT-CLA_1.opm,celest1,-5,包络匹配 d=0.06
+100,fx,X68K(MDX),Imagineer_-_Lemmings_-_LEM17.opm,mdx instrument @3,-5,包络匹配 d=0.06
+101,fx,FB01(OPP),SWI-SYN_1.opm,syn br1,-6,包络匹配 d=0.06
+102,fx,FB01(OPP),ELP-ELE_6.opm,echo  1,70,名字命中
+103,fx,X68K(MDX),SEGA_-_Altered_Beast_-_ZYU94.opm,mdx instrument @57,-6,包络匹配 d=0.06
+104,ethnic,TX81Z(OPZ),tx81z_22m_4.opm,sitar,90,名字命中
+105,ethnic,FB01(OPP),FB01ROM5_3.opm,banjo,100,名字命中
+106,ethnic,TX81Z(OPZ),tx81z_14n_2.opm,e.piano,-4,包络匹配 d=0.04
+107,ethnic,TX81Z(OPZ),tx81z_21n_4.opm,koto,90,名字命中
+108,ethnic,TX81Z(OPZ),tx81z_16m_2.opm,marimba,-4,包络匹配 d=0.04
+109,ethnic,X68K(MDX),Namco_-_Galaga_88_-_G8003.opm,mdx instrument @4,-5,包络匹配 d=0.05
+110,ethnic,FB01(OPP),ELE-FLU_6.opm,fiddle1,70,名字命中
+111,ethnic,X68K(MDX),Namco_-_Gaplus_-_GAP1.opm,mdx instrument @2,-5,包络匹配 d=0.06
+112,perc,FB01(OPP),AAA-AAA_3.opm,-bells1,70,名字命中
+113,perc,TX81Z(OPZ),tx81z_03n_4.opm,agogo b,60,名字命中
+114,perc,X68K(MDX),SEGA_-_Golden_Axe_-_GAXE05.opm,mdx instrument @154,-5,包络匹配 d=0.05
+115,perc,TX81Z(OPZ),tx81z_14m_4.opm,java ji,-6,包络匹配 d=0.06
+116,perc,TX81Z(OPZ),tx81z_37n_1.opm,tom tom,-7,包络匹配 d=0.07
+117,perc,TX81Z(OPZ),tx81z_36n_4.opm,tom,90,名字命中
+118,perc,FB01(OPP),HAR-HOR_3.opm,hdrum 1,70,名字命中
+119,perc,FB01(OPP),CLE-DBG_1.opm,cymbal1,70,名字命中
+120,sfx,X68K(MDX),SEGA_-_Tetris_-_TET93.opm,mdx instrument @54,-4,包络匹配 d=0.04
+121,sfx,TX81Z(OPZ),tx81z_07m_1.opm,breatho,60,名字命中
+122,sfx,FB01(OPP),WBA-XYL_2.opm,wave2 1,70,名字命中
+123,sfx,FB01(OPP),BEA-BOU_5.opm,bird s1,70,名字命中
+124,sfx,X68K(MDX),SEGA_-_Tetris_-_TET98.opm,mdx instrument @56,-4,包络匹配 d=0.04
+125,sfx,X68K(MDX),Konami_-_Castlevania_-_CV_X68K_-_DRA01.opm,mdx instrument @242,-6,包络匹配 d=0.06
+126,sfx,X68K(MDX),Imagineer_-_Lemmings_-_LEM20.opm,mdx instrument @107,-8,包络匹配 d=0.08
+127,sfx,FB01(OPP),FB01ROM4_6.opm,hand dr,-9,包络匹配 d=0.10
